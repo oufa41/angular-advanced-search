@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-advanced-search"
+    }
+  },
+  "defaultProject": "angular-advanced-search",
+  "cli": {
+    "analytics": false
+  }
 }
