@@ -13,7 +13,6 @@ pipeline {
                        bat 'npm run ng -- build --prod'
                     }
                 }
-              
             }
         }
         stage('test') {
@@ -22,7 +21,7 @@ pipeline {
                     if (isUnix()) {
                        sh 'npm run ng -- test --code-coverage --no-watch --browsers=ChromeHeadless' 
                     } else {
-                      bat 'npm run ng -- test --code-coverage --no-watch --browsers=ChromeHeadless' 
+                      bat 'npm run ng -- test --code-coverage --no-watch --browsers=ChromeHeadless'
                     }
                 }
             }
