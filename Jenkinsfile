@@ -18,9 +18,9 @@ pipeline {
             steps {
                  script {
                     if (isUnix()) {
-                        sh 'ng test --code-coverage --watch=false' 
+                        sh 'npm run ng test --code-coverage --watch=false' 
                     } else {
-                      bat 'ng test --code-coverage --watch=false' 
+                      bat 'npm run ng test --code-coverage --watch=false' 
                     }
                 }
             }
