@@ -4,12 +4,25 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install' 
+                 script {
+                    if (isUnix()) {
+                       sh 'npm install'
+                    } else {
+                       bat 'npm install'
+                    }
+                }
+              
             }
         }
         stage('test') {
             steps {
-                sh 'ng test --code-coverage --watch=false' 
+                 script {
+                    if (isUnix()) {
+                        sh 'ng test --code-coverage --watch=false' 
+                    } else {
+                      bat 'ng test --code-coverage --watch=false' 
+                    }
+                }
             }
         }
     }
