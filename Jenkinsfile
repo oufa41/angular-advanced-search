@@ -21,6 +21,7 @@ pipeline {
                     if (isUnix()) {
                        sh 'npm run ng -- test --code-coverage --no-watch --browsers=ChromeHeadless' 
                     } else {
+                      bat 'npm install'
                       bat 'npm run ng -- test --code-coverage --no-watch --browsers=ChromeHeadless'
                     }
                 }
