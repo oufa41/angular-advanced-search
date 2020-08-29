@@ -2,17 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('test') {
-            steps {
-                 script {
-                    if (isUnix()) {
-                       sh 'npm run ng -- test --watch=false --code-coverage --browsers=ChromeHeadlessNoSandbox' 
-                    } else {
-                      bat 'npm run ng -- test --watch=false --code-coverage --browsers=ChromeHeadlessNoSandbox'
-                    }
-                }
-            }
-        }
         stage('Build') {
             steps {
                  script {
@@ -26,6 +15,16 @@ pipeline {
                 }
             }
         }
-        
+        stage('test') {
+            steps {
+                 script {
+                    if (isUnix()) {
+                       sh 'npm run ng -- test --watch=false --code-coverage --browsers=ChromeHeadlessNoSandbox' 
+                    } else {
+                      bat 'npm run ng -- test --watch=false --code-coverage --browsers=ChromeHeadlessNoSandbox'
+                    }
+                }
+            }
+        }
     }
 }
