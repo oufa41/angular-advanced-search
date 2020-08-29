@@ -19,9 +19,9 @@ pipeline {
             steps {
                  script {
                     if (isUnix()) {
-                       sh 'npm run ng -- test --code-coverage --no-watch --browsers=ChromeHeadless' 
+                       sh 'npm run ng -- test --code-coverage  --browsers=ChromeHeadless' 
                     } else {
-                      bat 'npm run ng -- test --code-coverage --no-watch --browsers=ChromeHeadless'
+                      bat 'npm run ng -- test --code-coverage  --browsers=ChromeHeadless'
                     }
                 }
             }
