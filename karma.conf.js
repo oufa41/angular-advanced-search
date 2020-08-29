@@ -20,13 +20,17 @@ module.exports = function(config) {
             reports: ['html', 'lcovonly', 'text-summary'],
             fixWebpackSourcePaths: true
         },
+        captureTimeout: 110000,
+        browserDisconnectTolerance: 3,
+        browserDisconnectTimeout: 110000,
+        browserNoActivityTimeout: 110000,
         reporters: ['progress', 'kjhtml'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
         browsers: ['Chrome'],
-        singleRun: true,
+        singleRun: false,
         customLaunchers: {
             ChromeHeadlessNoSandbox: {
                 base: 'ChromeHeadless',
