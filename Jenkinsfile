@@ -19,9 +19,9 @@ pipeline {
             steps {
                  script {
                     if (isUnix()) {
-                       sh 'npm run ng -- test --watch=false --code-coverage --browsers=ChromeHeadlessNoSandbox' 
+                       sh 'npm run test:prod' 
                     } else {
-                      bat 'npm run ng -- test --watch=false --code-coverage --browsers=ChromeHeadlessNoSandbox'
+                      bat 'npm run test:prod'
                     }
                 }
             }
