@@ -26,7 +26,7 @@ module.exports = function(config) {
         logLevel: config.LOG_INFO,
         autoWatch: true,
 
-        singleRun: false,
+        singleRun: true,
         customLaunchers: {
             ChromeHeadlessNoSandbox: {
                 base: 'ChromeHeadless',
@@ -35,10 +35,6 @@ module.exports = function(config) {
         },
         browsers: ['ChromeHeadlessNoSandbox'],
         restartOnFileChange: true,
-        captureTimeout: 210000,
-        browserDisconnectTolerance: 3,
-        browserDisconnectTimeout: 210000,
-        browserNoActivityTimeout: 210000,
         failOnEmptyTestSuite: false
     });
 };
