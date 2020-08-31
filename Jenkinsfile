@@ -7,10 +7,10 @@ pipeline {
                  script {
                     if (isUnix()) {
                        sh 'npm install'
-                       sh 'npm run-script build --prod'
+                      // sh 'npm run-script build --prod'
                     } else {
                        bat 'npm install'
-                       bat 'npm run-script build --prod'
+                       //bat 'npm run-script build --prod'
                     }
                 }
             }
@@ -22,7 +22,7 @@ pipeline {
                        sh 'npm run-script test:prod' 
                        
                     } else {
-                      bat 'npm run-script test:prod'
+                      bat 'npm run-script cibuild'
                     }
                 }
             }
