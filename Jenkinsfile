@@ -19,10 +19,10 @@ pipeline {
             steps {
                  script {
                     if (isUnix()) {
-                       sh 'npm run-script test:prod' 
+                       sh 'npm run-script  test:prod  --max_old_space_size=5048 ' 
                        
                     } else {
-                      bat 'npm run-script test:prod'
+                      bat 'npm run-script  test:prod --max_old_space_size=5048 '
                     }
                 }
             }
