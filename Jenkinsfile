@@ -23,8 +23,8 @@ pipeline {
                        
                     } else {
         
-                      //bat 'npm run-script  test:prod --max_old_space_size=5048 '
-                     bat ' node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng test --code-coverage'
+                      bat 'npm run-script  test:prod'
+                    // bat ' node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng test --code-coverage'
                     }
                 }
             }
