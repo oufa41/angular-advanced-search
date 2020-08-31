@@ -7,10 +7,10 @@ pipeline {
                  script {
                     if (isUnix()) {
                        sh 'npm install'
-                       sh 'npm run ng -- build --prod'
+                       sh 'npm run-script build --prod'
                     } else {
                        bat 'npm install'
-                       bat 'npm run ng -- build --prod'
+                       bat 'npm run-script build --prod'
                     }
                 }
             }
@@ -19,9 +19,10 @@ pipeline {
             steps {
                  script {
                     if (isUnix()) {
-                       sh 'npm run test:prod' 
+                       sh 'npm run-script test:prod' 
+                       
                     } else {
-                      bat 'npm run test:prod'
+                      bat 'npm run-script test:prod'
                     }
                 }
             }
