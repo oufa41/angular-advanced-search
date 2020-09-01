@@ -30,11 +30,11 @@ module.exports = function(config) {
         singleRun: true,
         customLaunchers: {
             ChromeHeadlessNoSandbox: {
-                base: 'Chrome',
-                flags: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-translate', '--disable-extensions', '--remote-debugging-port=9222']
+                base: 'ChromeHeadless',
+                flags: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-web-security', '--disable-translate', '--disable-extensions', '--remote-debugging-port=9222']
             }
         },
-        browsers: ['Chrome'],
+        browsers: ['ChromeHeadless'],
         restartOnFileChange: true,
         failOnEmptyTestSuite: false
     });
