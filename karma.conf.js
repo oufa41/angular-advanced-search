@@ -30,7 +30,7 @@ module.exports = function(config) {
         singleRun: true,
         customLaunchers: {
             ChromeHeadlessNoSandbox: {
-                base: 'ChromeHeadless',
+                base: 'Chrome',
                 flags: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-translate', '--disable-extensions', '--remote-debugging-port=9222']
             }
         },
