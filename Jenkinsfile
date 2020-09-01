@@ -23,7 +23,7 @@ pipeline {
                        
                     } else {
         
-                      bat '  test:prod'
+                      bat ' ng test  --source-map=false --code-coverage  --watch=false --browsers=ChromeHeadlessNoSandbox'
                     // bat ' node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng test --code-coverage'
                     }
                 }
