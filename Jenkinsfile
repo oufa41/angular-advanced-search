@@ -23,7 +23,7 @@ pipeline {
                        
                     } else {
         
-                      powershell  ' npm run  test:prod'
+                      bat  ' npm run  test:prod'
                     // bat ' node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng test --code-coverage'
                     }
                 }
