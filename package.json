@@ -8,7 +8,7 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "test:prod": "ng test  --source-map=false --code-coverage  --watch=false --browsers=ChromeHeadlessNoSandbox",
+        "test:prod": "ng test  --source-map=false --code-coverage  --watch=false --browsers=ChromeHeadless",
         "cibuild": "ng test  --code-coverage --watch=false --browsers=ChromeHeadlessNoSandbox  && ng build --prod --no-progress"
     },
     "private": true,
