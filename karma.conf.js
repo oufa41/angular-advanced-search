@@ -39,7 +39,8 @@ module.exports = function(config) {
         },
         browsers: ['ChromeHeadless'],
         singleRun: true,
-        restartOnFileChange: true
+        restartOnFileChange: true,
+        failOnEmptyTestSuite: false
     });
 };
 
