@@ -26,24 +26,20 @@ module.exports = function(config) {
         //  colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browserDisconnectTimeout: 10000,
-        browserDisconnectTolerance: 3,
-        browserNoActivityTimeout: 60000,
-        singleRun: true,
         customLaunchers: {
-            ChromeHeadlessNoSandbox: {
-                base: 'ChromeHeadless',
-                flags: ['--no-sandbox',
-                    '--headless', '--disable-gpu',
-                    '--disable-web-security', '--disable-translate', '--disable-extensions',
-                    '--disable-setuid-sandbox',
-                    '--proxy-auto-detect'
+            ChromeHeadless: {
+                base: 'Chrome',
+                flags: [
+                    '--headless',
+                    '--disable-gpu',
+                    '--no-sandbox',
+                    '--remote-debugging-port=9222',
                 ]
             }
         },
         browsers: ['ChromeHeadless'],
-        restartOnFileChange: true,
-        failOnEmptyTestSuite: false
+        singleRun: true,
+        restartOnFileChange: true
     });
 };
 
