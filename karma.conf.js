@@ -36,7 +36,8 @@ module.exports = function(config) {
                 flags: ['--no-sandbox',
                     '--headless', '--disable-gpu',
                     '--disable-web-security', '--disable-translate', '--disable-extensions',
-                    '--disable-setuid-sandbox'
+                    '--disable-setuid-sandbox',
+                    '--proxy-auto-detect'
                 ]
             }
         },
