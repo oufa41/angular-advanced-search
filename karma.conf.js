@@ -26,25 +26,18 @@ module.exports = function(config) {
         //  colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
+        singleRun: true,
         customLaunchers: {
-            ChromeHeadless: {
+            ChromeHeadlessNoSandbox: {
                 base: 'ChromeHeadless',
-                flags: [
-                    '--headless',
-                    '--disable-gpu',
-                    '--no-sandbox',
-                    '--disable-web-security',
-                    '--remote-debugging-port=9222',
-                ]
+                flags: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-translate', '--disable-extensions', '--remote-debugging-port=9222']
             }
         },
-        browsers: ['ChromeHeadless'],
-        singleRun: true,
+        browsers: ['Chrome'],
         restartOnFileChange: true,
         failOnEmptyTestSuite: false
     });
 };
-
 // module.exports = function(config) {
 //     config.set({
 //         basePath: '',
