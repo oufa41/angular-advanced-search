@@ -33,7 +33,7 @@ module.exports = function(config) {
                     '--disable-gpu',
                     '--no-sandbox',
                     '--disable-web-security',
-
+                    '--remote-debugging-port=9222',
                 ]
             }
         },
