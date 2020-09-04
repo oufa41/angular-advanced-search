@@ -26,13 +26,13 @@ module.exports = function(config) {
         logLevel: config.LOG_INFO,
         autoWatch: false,
         singleRun: true,
+        browsers: ['ChromeHeadlessNoSandbox'],
         customLaunchers: {
             ChromeHeadlessNoSandbox: {
                 base: 'ChromeHeadless',
                 flags: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-translate', '--disable-extensions', '--remote-debugging-port=9222']
             }
         },
-        browsers: ['Chrome'],
         restartOnFileChange: true,
         failOnEmptyTestSuite: false
     });
