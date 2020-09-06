@@ -9,6 +9,5 @@ export class AppComponent  implements OnInit{
     title = 'angular-advanced-search';
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 }
