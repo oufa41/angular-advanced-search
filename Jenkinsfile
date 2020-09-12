@@ -1,31 +1,37 @@
+
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
-                 script {
+                script {
                     if (isUnix()) {
-                       sh 'npm install'
-                       sh 'npm run build --prod'
+                        sh 'npm install'
+                        sh 'npm run build --prod'
                     } else {
-                       bat 'npm install'
-                       bat 'npm run build --prod'
+                        bat 'npm install'
+                        bat 'npm run build --prod'
                     }
                 }
             }
         }
         stage('test') {
             steps {
-                 script {
+                script {
                     if (isUnix()) {
-                       sh 'npm run  test:prod  --max_old_space_size=5048 ' 
-                       
+                        sh 'npm run  test:prod'
                     } else {
-        
-                      bat  ' npm run  test:prod'
-                    // bat ' node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng test --code-coverage'
+                        bat 'npm run  test:prod'
                     }
+                }
+            }
+        }
+        stage('Build docker image') {
+            steps {
+                echo 'Starting to build docker image'
+                script {
+                    def customImage = docker.build("my-image:${env.BUILD_ID}")
+                    customImage.push()
                 }
             }
         }
