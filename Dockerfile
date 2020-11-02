@@ -1,13 +1,13 @@
 #stage 1 adding node and copying all files
-FROM node:latest 
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
+FROM node:latest AS build-image
+RUN mkdir /builddir
+WORKDIR /builddir
 
-COPY package*.json /usr/src/app/
+COPY package*.json /builddir/
 RUN npm install
-COPY . /usr/src/app/
+COPY . /builddir/
 RUN npm run build --prod
 
 #stage 2 adding to nginx
 FROM nginx:stable
-COPY --from=node /usr/src/app/dist/angular-advance-search /usr/share/nginx/html
+COPY --from=build-image /builddir/dist/angular-advanced-search /usr/share/nginx/html
